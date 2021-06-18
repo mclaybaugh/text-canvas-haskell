@@ -1,0 +1,48 @@
+name:                text-canvas-haskell
+version:             0.1.0.0
+github:              "mclaybaugh/text-canvas-haskell"
+license:             BSD3
+author:              "Michael Claybaugh"
+maintainer:          "michael.claybaugh@gmail.com"
+copyright:           "2021 Michael Claybaugh"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/text-canvas-haskell#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  text-canvas-haskell-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - text-canvas-haskell
+
+tests:
+  text-canvas-haskell-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - text-canvas-haskell
